@@ -1,10 +1,16 @@
 const mysql = require('mysql2');
-const inquirer = require('inquire');
+const inquirer = require('inquirer');
+const dotenv = require('dotenv');
+dotenv.config()
 
-const connection = mysql.createConnection({
-    host: 'localhost',
+const connection = mysql.createConnection(
+    {
     port: 3306,
-    user: 'root',
-    password:'',
-    database: 'employtee_db'
-});
+    host: process.env.HOST,
+    user: process.env.USER,
+    password: process.env.PASSWORD,
+    database: process.env.DATABASE,
+    },
+    console.log('Connection Successful!')
+);
+
