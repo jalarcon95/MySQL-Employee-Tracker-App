@@ -1,18 +1,18 @@
-DROP DEATABASE IF EXISTS employees_db;
+DROP DATABASE IF EXISTS employees_db;
 
-CREATE DEATABASE employees_db;
+CREATE DATABASE employees_db;
 
 USE employees_db;
 
 CREATE TABLE department (
     id INT NOT NULL AUTO_INCREMENT,
 
-    name VARCHAR(50) NOT NULL,
+    dept_name VARCHAR(50) NOT NULL,
 
     PRIMARY KEY(id)
 );
 
-CREATE TABLE role (
+CREATE TABLE roles (
     id INT NOT NULL AUTO_INCREMENT,
 
     title VARCHAR(50) NOT NULL,
