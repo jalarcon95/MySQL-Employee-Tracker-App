@@ -103,7 +103,7 @@ function addDepartment() {
     inquirer.prompt({
 
         type:"input",
-        message: "Give the department a name.",
+        message: "Enter a name for the department.",
         name: "deptName"
 
     }).then(function(answer) {
@@ -112,7 +112,100 @@ function addDepartment() {
             if(err) throw err;
             console.table(res)
             startScreen()
-        })
+        });
 
-    })
+    });
 }
+
+function addRole() {
+    inquirer.prompt([
+        {
+            type: "input",
+            message: "Enter a name for the role.",
+            name: "roleName"
+        },
+        {
+            type: "input",
+            message: "Enter the salary for the role.",
+            name: "salaryTotal"
+        },
+        {
+            type: "input",
+            message: "What is the department id number?",
+            name: "departmentID"
+        }
+    ])
+
+    .then(function(answer) {
+        connection.query
+        ("INSTER INTO role (title, salary, department_id) VALUES (?, ?, ?)", 
+        [answer.roleName, answer.salaryTotal, answer.departmentID], function(err, res) {
+            if(err) throw err;
+            console.table(res);
+            startScreen();
+        });
+
+    });
+}
+
+function addEmployee() {
+    inquirer.prompt([
+        {
+            type: "input",
+            message: "Enter the employee's first name.",
+            name: "firstName"
+        },
+        {
+            type: "input",
+            message: "Enter the employee's last name.",
+            name: "lastName"
+        },
+        {
+            type: "input",
+            message: "Enter the employee's role id number.",
+            name: "roleID"
+        },
+        {
+            type: "input",
+            message: "Enter the employee's manager id number.",
+            name: "managerID"
+        }
+    ])
+
+    .then(function(answer) {
+
+        connection.query("INSERT INTO emplyoee (first_name, last_name, role_id, manager_id) VALUES (?, ?, ?, ?)", 
+        [answer.firstName, answer.lastName, answer.roleID, answer.managerID], function(err, res) {
+            if (err) throw err;
+            console.table(res);
+            startScreen();
+        });
+    });
+}
+
+function updateEmployee() {
+    inquirer.prompt([
+        {
+            type: "input",
+            message: "Select the employee you would like to update.",
+            name: "employeeUpdate"
+        },
+        {
+            type: "input",
+            message: "Select new role for the employee.",
+            name: "updateRole"
+        }
+        
+    ])
+
+    .then(function(answer) {
+
+        connection.query("UPDATE employee SET role_id=? WHERE first_name=?", 
+        [answer.updateRole, answer.employeeUpdate], function(err, res) {
+            if(err) throw err;
+            console.table(res);
+            startScreen();
+        });
+    });
+}
+
