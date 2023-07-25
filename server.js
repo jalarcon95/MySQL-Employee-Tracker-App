@@ -1,22 +1,20 @@
 const mysql = require('mysql2');
 const inquirer = require('inquirer');
 const consoleTable = require("console.table");
-const dotenv = require('dotenv');
-dotenv.config()
+require("dotenv").config();
 
 const connection = mysql.createConnection(
     {
-    port: 3306,
-    host: process.env.HOST,
-    user: process.env.USER,
+    port: '3306',
+    host: 'localhost',
+    user: 'root',
     password: process.env.PASSWORD,
-    database: process.env.DATABASE,
+    database: 'employees_db'
     },
     console.log('Connection Successful!')
 );
 
-connection.connect(function(err){
-
+connection.connect(function(err) {
     if (err) throw err;
 
     console.log("connected as id " + connection.threadId);
@@ -83,7 +81,7 @@ function viewDepartment() {
 }
 
 function viewRoles() {
-    let query = "SELECT * FROM role";
+    let query = "SELECT * FROM roles";
     connection.query(query, function(err, res) {
         if(err) throw err;
         console.table(res);
