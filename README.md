@@ -15,8 +15,13 @@
 
   ## [Description](#table-of-contents)
 
+  The goal of this project is to create a command-line application to manage a company's employee database. The database must be connected using MySQL and the user input is stored using npm Inquirer. The resulting interface is called a content management system (CMS) and it will store and display the company's departments, roles, and employees' details. 
+
+  ![Alt text](/assets/image.png)
 
   ## [Installation](#table-of-contents)
+
+  MySQL2 required, dotenv required, inquirer required, console.table required. 
 
 
   ## [Usage](#table-of-contents)
@@ -39,10 +44,4 @@
   [mit](https://choosealicense.com/licenses/mit)
     
 
-
-
-
-  
-
-![Alt text](/assets/image.png)
 
