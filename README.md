@@ -15,7 +15,7 @@
 
   ## [Description](#table-of-contents)
 
-  The goal of this project is to create a command-line application to manage a company's employee database. The database must be connected using MySQL and the user input is stored using npm Inquirer. The resulting interface is called a content management system (CMS) and it will store and display the company's departments, roles, and employees' details. The following graphic illustrates the relationship between the tables in the database: 
+  The goal of this project is to create a command-line application to manage a company's employee database. The database must be connected using MySQL and the user input is received using npm inquirer. The resulting interface is called a content management system (CMS) and it will store and display the company's departments, roles, and employees' details. The following graphic illustrates the relationship between the tables in the database: 
 
   ![Alt text](/assets/image.png)
 
