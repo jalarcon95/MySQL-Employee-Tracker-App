@@ -130,14 +130,13 @@ function addRole() {
         {
             type: "input",
             message: "What is the department id number?",
-            name: "departmentID"
+            name: "deptID"
         }
     ])
 
     .then(function(answer) {
         connection.query
-        ("INSTER INTO role (title, salary, department_id) VALUES (?, ?, ?)", 
-        [answer.roleName, answer.salaryTotal, answer.departmentID], function(err, res) {
+        ("INSERT INTO roles (title, salary, department_id) VALUES (?, ?, ?)", [answer.roleName, answer.salaryTotal, answer.deptID], function(err, res) {
             if(err) throw err;
             console.table(res);
             startScreen();
@@ -172,8 +171,7 @@ function addEmployee() {
 
     .then(function(answer) {
 
-        connection.query("INSERT INTO emplyoee (first_name, last_name, role_id, manager_id) VALUES (?, ?, ?, ?)", 
-        [answer.firstName, answer.lastName, answer.roleID, answer.managerID], function(err, res) {
+        connection.query("INSERT INTO employee (first_name, last_name, role_id, manager_id) VALUES (?, ?, ?, ?)", [answer.firstName, answer.lastName, answer.roleID, answer.managerID], function(err, res) {
             if (err) throw err;
             console.table(res);
             startScreen();
@@ -198,8 +196,7 @@ function updateEmployee() {
 
     .then(function(answer) {
 
-        connection.query("UPDATE employee SET role_id=? WHERE first_name=?", 
-        [answer.updateRole, answer.employeeUpdate], function(err, res) {
+        connection.query('UPDATE employee SET role_id=? WHERE first_name=?', [answer.updateRole, answer.employeeUpdate], function(err, res) {
             if(err) throw err;
             console.table(res);
             startScreen();
