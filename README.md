@@ -15,19 +15,20 @@
 
   ## [Description](#table-of-contents)
 
-  The goal of this project is to create a command-line application to manage a company's employee database. The database must be connected using MySQL and the user input is stored using npm Inquirer. The resulting interface is called a content management system (CMS) and it will store and display the company's departments, roles, and employees' details. 
+  The goal of this project is to create a command-line application to manage a company's employee database. The database must be connected using MySQL and the user input is stored using npm Inquirer. The resulting interface is called a content management system (CMS) and it will store and display the company's departments, roles, and employees' details. The following graphic illustrates the relationship between the tables in the database: 
 
   ![Alt text](/assets/image.png)
 
   ## [Installation](#table-of-contents)
 
-  MySQL2 required, dotenv required, inquirer required, console.table required. 
+  MySQL2 required, dotenv required, inquirer required, console.table required, Nodejs required. The user can clone this code, install all required packages, and run the application in node to start updating the database.
 
 
   ## [Usage](#table-of-contents)
 
   The application is run with nodejs and the inquirer package. Once the application is running, the user will be able to select from a list of actions. The actions are in this order: view departments, view roles, view employees, add department, add roles, add employees, update employees, and quit. For adding a department, the user is able to add the department. For adding a role, the user is able to add the role title, salary, and department id. For adding an employee, the user is able to add the first name, last name, and role id. For updating an employee, the user can choose which user to update, and change their role. 
 
+  App Demo Link:
 
   ## [Credits](#table-of-contents)
 
